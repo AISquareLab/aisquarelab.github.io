@@ -1,69 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>SAM4MLLM</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style/w3.css">
-<link rel="stylesheet" href="style/SAM4MLLM.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAM4MLLM – Project Page</title>
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --bg-dark: #1f2937;
+      --text-light: #1f2937;
+      --text-dark: #f3f4f6;
+      --card-light: #ffffff;
+      --card-dark: #374151;
+      --border-light: #e5e7eb;
+      --border-dark: #4b5563;
+      --link: #2563eb;
+    }
 
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-body, html {height: 100%}
-</style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1, h2, h3 {
+      color: var(--text-light);
+      transition: color 0.3s;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 0.3rem;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      background-color: var(--card-light);
+      border: 1px solid var(--border-light);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s, border 0.3s;
+    }
+
+    strong {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      transition: color 0.3s;
+    }
+
+    em {
+      color: #6b7280;
+      display: block;
+      margin-top: 0.25rem;
+    }
+
+    a {
+      margin-right: 0.5rem;
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode strong {
+      color: var(--text-dark);
+    }
+
+    .dark-mode li {
+      background-color: var(--card-dark);
+      border: 1px solid var(--border-dark);
+    }
+
+    #toggle-btn {
+      margin: 1rem auto;
+      display: block;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #e5e7eb;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
+  <button id="toggle-btn">🌙</button>
 
-<div class="w3-light-grey">
-  <div class="w3-display-topmiddle">
-    <!-- <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1> -->
-    <h1 class="w3-animate-top" style="text-align: center;">SAM4MLLM: Enhance Multi-Modal Large Language Model for Referring Expression Segmentation</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:100%">
-    <p class="w3-large w3-center"> Yi-Chia Chen, Wei-Hua Li, Cheng Sun, Yu-Chiang Frank Wang, Chu-Song Chen</p>
-    <p class="w3-large w3-center">In ECCV 2024</p>
+  <h1>SAM4MLLM: Enhance Multi-Modal Large Language Model for Referring Expression Segmentation</h1>
+  <p style="text-align: center; font-size: 1.1rem;">
+    Yi-Chia Chen, Wei-Hua Li, Cheng Sun, Yu-Chiang Frank Wang, Chu-Song Chen<br>
+    <em>European Conference on Computer Vision (ECCV), 2024</em>
+  </p>
 
-    <table style="width:100%">
-      <thead>
-        <tr>
-          <th><a href="" style="text-decoration:none"><i class="fa fa-file-pdf-o" style="padding-top:6px;font-size:18px;"></i></a></th>
-          <th><a href="https://github.com/AI-Application-and-Integration-Lab/SAM4MLLM" style="text-decoration:none"><i class="fa fa-github" aria-hidden="true" style="padding-top:6px;font-size:20px"></i></a></th>
-          <th><a href=""><i class="fa fa-external-link fa-fw" style="padding-top:6px;font-size:20px"></i></a></th>
-        </tr>
-
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align:center"><a href="" style="text-decoration:none">Paper</a></td>
-          <td style="text-align:center"><a href="https://github.com/AI-Application-and-Integration-Lab/SAM4MLLM" style="text-decoration:none">Codes</a></td>
-          <td style="text-align:center"><a href="" style="text-decoration:none">Poster</a></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div style="height:5vh"></div>
-    <!-- <img src="images/CL4WSIS.png" class="center" style="width:400px" alt=""> -->
-    <h2 style="text-align: center;">Abstract</h2>
-    <p class="w3-large" style="text-align:justify">We introduce SAM4MLLM, an innovative approach which integrates the Segment Anything Model (SAM) with Multi-Modal Large Language Models (MLLMs) for pixel-aware tasks. Our method enables MLLMs to learn pixel-level   location information without requiring excessive modifications to the existing model architecture or adding specialized tokens. We introduce an inquiry-based approach that can effectively find prompt points for SAM to perform segmentation based on MLLM. It combines detailed visual information with the powerful expressive capabilities of large language models in a unified language-based manner without additional computational overhead in learning. Experimental results on pubic benchmarks demonstrate the effectiveness of our approach.</p>
-    <img src="images/SAM4MLLM/SAM4MLLM_PPG.png" style="width:950px;margin-bottom:20px" alt="">
-
-    <hr class="w3-border-grey" style="margin:auto;width:100%">
-    <p class="w3-large"> If you find our paper or codes helpful, please cite</p>
-    <div class="w3-light-grey" style="width:800px;padding-top: 1px;padding-left: 10px;padding-right: 10px;">
-      <pre style="overflow: auto;word-wrap: break-word;">
-<code>@InProceedings{Chen_2024_ECCV,
-    author    = {Yi-Chia Chen, Wei-Hua Li, Cheng Sun, Yu-Chiang Frank Wang, Chu-Song Chen},
-    title     = {SAM4MLLM: Enhance Multi-Modal Large Language Model for Referring Expression Segmentation},
-    booktitle = {European Conference on Computer Vision},
-    month     = {October},
-    year      = {2024}
-}</code></pre>
-    </div>
-
+  <div style="text-align: center; margin-bottom: 1rem;">
+    <a href="https://link.springer.com/chapter/10.1007/978-3-031-73004-7_19"><i class="fa fa-file-pdf-o"></i> Paper</a>
+    <a href="https://github.com/AI-Application-and-Integration-Lab/SAM4MLLM"><i class="fa fa-github"></i> Code</a>
+    <a href="#"><i class="fa fa-image"></i> Poster</a>
   </div>
-</div>
 
+  <h2>Abstract</h2>
+  <p style="text-align: justify; max-width: 900px; margin: 0 auto;">
+    We introduce SAM4MLLM, an innovative approach that integrates the Segment Anything Model (SAM) with Multi-Modal Large Language Models (MLLMs) for pixel-aware tasks. 
+    Our method enables MLLMs to learn pixel-level location information without requiring extensive modifications to the model architecture or additional tokens.
+  </p>
+  <p style="text-align: justify; max-width: 900px; margin: 1rem auto;">
+    We propose an inquiry-based prompting strategy to locate appropriate input points for SAM, guided by MLLM reasoning. This unifies detailed visual grounding with powerful language generation in a single language-driven framework, while remaining lightweight and architecture-agnostic. 
+    Extensive experiments on public benchmarks validate the effectiveness of SAM4MLLM.
+  </p>
+
+  <div style="text-align: center;">
+    <img src="images/SAM4MLLM/SAM4MLLM_PPG.png" alt="Illustration of SAM4MLLM architecture" style="width:100%; max-width:950px; border-radius: 0.5rem;">
+  </div>
+
+  <h2>Citation</h2>
+  <div style="background: var(--card-dark); color: var(--text-light); border: 1px solid var(--border-light); padding: 1rem; max-width: 900px; margin: 0 auto; overflow-x: auto;">
+<pre><code>@InProceedings{Chen_2024_ECCV,
+  author    = {Yi-Chia Chen, Wei-Hua Li, Cheng Sun, Yu-Chiang Frank Wang, Chu-Song Chen},
+  title     = {SAM4MLLM: Enhance Multi-Modal Large Language Model for Referring Expression Segmentation},
+  booktitle = {European Conference on Computer Vision},
+  month     = {October},
+  year      = {2024}
+}</code></pre>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-btn');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
 </body>
 </html>
