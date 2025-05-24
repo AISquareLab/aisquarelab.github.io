@@ -1,1 +1,207 @@
-<h1>Welcome to AI^2 Lab Project Page!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI²Lab – Publications</title>
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --bg-dark: #1f2937;
+      --text-light: #1f2937;
+      --text-dark: #f3f4f6;
+      --card-light: #ffffff;
+      --card-dark: #374151;
+      --border-light: #e5e7eb;
+      --border-dark: #4b5563;
+      --link: #2563eb;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1, h2, h3 {
+      color: var(--text-light);
+      transition: color 0.3s;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      color: #374151;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      background-color: var(--card-light);
+      border: 1px solid var(--border-light);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s, border 0.3s;
+    }
+
+    strong {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      transition: color 0.3s;
+    }
+
+    em {
+      color: #6b7280;
+      display: block;
+      margin-top: 0.25rem;
+    }
+
+    a {
+      margin-right: 0.5rem;
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3,
+    .dark-mode strong {
+      color: var(--text-dark);
+    }
+
+    .dark-mode li {
+      background-color: var(--card-dark);
+      border: 1px solid var(--border-dark);
+    }
+
+    #toggle-btn {
+      margin-bottom: 2rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #e5e7eb;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <button id="toggle-btn">🌙</button>
+
+  <h1>👋 Welcome to AI Application and Integration Lab</h1>
+
+  <p>
+    We are a research lab focused on exploring the intersection of artificial intelligence,
+    multimodal understanding, and human creativity. Our goal is to develop intelligent systems
+    that can perceive, reason, and generate across different modalities — including text and vision.
+  </p>
+
+  <p>📍 Located at National Taiwan University, Department of Computer Science & Information Engineering.</p>
+
+  <h2>📄 Selected Publications</h2>
+
+  <div id="publications">
+    <h3>2025</h3>
+  <ul>
+    <li>
+      <strong>RIDGE: Relation-Rich Visual Document Generator for Visual Information Extraction</strong>
+      <em>Zi-Han Jiang, Chien-Wei Lin, Wei-Hua Li, Hsuan-Tung Liu, Yi-Ren Yeh, Chu-Song Chen</em>
+      <em>Conference on Computer Vision and Pattern Recognition (CVPR)</em>
+      <a href="https://arxiv.org/abs/2504.10659">[paper]</a><a href="#">[code]</a>
+    </li>
+    <li>
+      <strong>PDSeg: Patch-Wise Distillation and Controllable Image Generation for Weakly-Supervised Histopathology Tissue Segmentation</strong>
+      <em>Wei-Hua Li, Yu-Hsing Hsieh, Huei-Fang Yang, Chu-Song Chen</em>
+      <em>ICASSP</em>
+      <a href="https://ieeexplore.ieee.org/abstract/document/10888097">[paper]</a><a href="https://github.com/AI-Application-and-Integration-Lab/PDSeg">[code]</a>
+    </li>
+  </ul>
+
+  <h3>2024</h3>
+  <ul>
+    <li>
+      <strong>ACCEPT: Adaptive Codebook for Composite and Efficient Prompt Tuning</strong>
+      <em>Yu-Chen Lin, Wei-Hua Li, Jun-Cheng Chen, Chu-Song Chen</em>
+      <em>Findings of EMNLP</em>
+      <a href="https://aclanthology.org/2024.findings-emnlp.900/">[paper]</a><a href="https://github.com/AI-Application-and-Integration-Lab/Accept">[code]</a>
+    </li>
+    <li>
+      <strong>SAM4MLLM: Enhance Multi-Modal Large Language Model for Referring Expression Segmentation</strong>
+      <em>Yi-Chia Chen, Wei-Hua Li, Cheng Sun, Yu-Chiang Frank Wang, Chu-Song Chen</em>
+      <em>ECCV</em>
+      <a href="https://link.springer.com/chapter/10.1007/978-3-031-73004-7_19">[paper]</a><a href="https://github.com/AI-Application-and-Integration-Lab/SAM4MLLM">[code]</a>
+    </li>
+    <li>
+      <strong>RDPN6D: Residual-based Dense Point-wise Network for 6Dof Object Pose Estimation Based on RGB-D Images</strong>
+      <em>Zong-Wei Hong, Yen-Yang Hung, Chu-Song Chen</em>
+      <em>CVPR Workshop DLGC</em>
+      <a href="https://openaccess.thecvf.com/content/CVPR2024W/DLGC/papers/Hong_RDPN6D_Residual-based_Dense_Point-wise_Network_for_6Dof_Object_Pose_Estimation_CVPRW_2024_paper.pdf">[paper]</a><a href="https://github.com/AI-Application-and-Integration-Lab/RDPN6D">[code]</a>
+    </li>
+    <li>
+      <strong>Open-Vocabulary Panoptic Segmentation Using Bert Pre-Training of Vision-Language Multiway Transformer Model</strong>
+      <em>Yi-Chia Chen, Wei-Hua Li, Chu-Song Chen</em>
+      <em>ICIP</em>
+      <a href="https://ieeexplore.ieee.org/abstract/document/10647459">[paper]</a><a href="https://github.com/AI-Application-and-Integration-Lab/OMTSeg">[code]</a>
+    </li>
+  </ul>
+
+  <h3>2023</h3>
+  <ul>
+    <li>
+      <strong>Class-incremental Continual Learning for Instance Segmentation with Image-level Weak Supervision</strong>
+      <em>Yu-Hsing Hsieh, Guan-Sheng Chen, Shun-Xian Cai, Ting-Yun Wei, Huei-Fang Yang, Chu-Song Chen</em>
+      <em>ICCV</em>
+      <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Hsieh_Class-incremental_Continual_Learning_for_Instance_Segmentation_with_Image-level_Weak_Supervision_ICCV_2023_paper.pdf">[paper]</a><a href="https://github.com/AI-Application-and-Integration-Lab/CL4WSIS">[code]</a>
+    </li>
+    <li>
+      <strong>Domain-Generalized Face Anti-Spoofing with Unknown Attacks</strong>
+      <em>Zong-Wei Hong, Yu-Chen Lin, Hsuan-Tung Liu, Yi-Ren Yeh, Chu-Song Chen</em>
+      <em>ICIP</em>
+      <a href="https://ieeexplore.ieee.org/abstract/document/10223078">[paper]</a><a href="https://github.com/AI-Application-and-Integration-Lab/DGUA_FAS">[code]</a>
+    </li>
+  </ul>
+  </div>
+
+  <h2>👥 Maintainers</h2>
+  <p>
+    This profile is maintained by members of <strong>AI²Lab</strong>. For questions or collaborations, please open an issue or contact us directly.
+  </p>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-btn');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
