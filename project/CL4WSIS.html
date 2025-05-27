@@ -1,59 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>CL4WSIS</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style/w3.css">
-<link rel="stylesheet" href="style/CL4WSIS.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAM4MLLM – Project Page</title>
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --bg-dark: #1f2937;
+      --text-light: #1f2937;
+      --text-dark: #f3f4f6;
+      --card-light: #ffffff;
+      --card-dark: #374151;
+      --border-light: #e5e7eb;
+      --border-dark: #4b5563;
+      --link: #2563eb;
+    }
 
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-body, html {height: 100%}
-</style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1, h2, h3 {
+      color: var(--text-light);
+      transition: color 0.3s;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 0.3rem;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      background-color: var(--card-light);
+      border: 1px solid var(--border-light);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s, border 0.3s;
+    }
+
+    strong {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      transition: color 0.3s;
+    }
+
+    em {
+      color: #6b7280;
+      display: block;
+      margin-top: 0.25rem;
+    }
+
+    a {
+      margin-right: 0.5rem;
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode strong {
+      color: var(--text-dark);
+    }
+
+    .dark-mode li {
+      background-color: var(--card-dark);
+      border: 1px solid var(--border-dark);
+    }
+
+    #toggle-btn {
+      margin: 1rem auto;
+      display: block;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #e5e7eb;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
+  <button id="toggle-btn">🌙</button>
 
-<div class="w3-light-grey">
-  <div class="w3-display-topmiddle">
-    <!-- <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1> -->
-    <h1 class="w3-animate-top" style="text-align: center;">Class-incremental Continual Learning for Instance <br>Segmentation with Image-level Weak Supervision</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:100%">
-    <p class="w3-large w3-center"> Yu-Hsing Hsieh, Guan-Sheng Chen, Shun-Xian Cai, Ting-Yun Wei, Huei-Fang Yang, Chu-Song Chen</p>
-    <p class="w3-large w3-center">In ICCV 2023</p>
+  <h1>Class-incremental Continual Learning for Instance <br>Segmentation with Image-level Weak Supervision</h1>
+  <p style="text-align: center; font-size: 1.1rem;">
+    Yu-Hsing Hsieh, Guan-Sheng Chen, Shun-Xian Cai, Ting-Yun Wei, Huei-Fang Yang, Chu-Song Chen<br>
+    <em>IEEE/CVF International Conference on Computer Vision (ICCV), 2023</em>
+  </p>
 
-    <table style="width:100%">
-      <thead>
-        <tr>
-          <th><a href="" style="text-decoration:none"><i class="fa fa-file-pdf-o" style="padding-top:6px;font-size:18px;"></i></a></th>
-          <th><a href="https://github.com/AI-Application-and-Integration-Lab/CL4WSIS" style="text-decoration:none"><i class="fa fa-github" aria-hidden="true" style="padding-top:6px;font-size:20px"></i></a></th>
-          <th><a href=""><i class="fa fa-external-link fa-fw" style="padding-top:6px;font-size:20px"></i></a></th>
-        </tr>
+  <div style="text-align: center; margin-bottom: 1rem;">
+    <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Hsieh_Class-incremental_Continual_Learning_for_Instance_Segmentation_with_Image-level_Weak_Supervision_ICCV_2023_paper.pdf"><i class="fa fa-file-pdf-o"></i> Paper</a>
+    <a href="https://github.com/AI-Application-and-Integration-Lab/CL4WSIS"><i class="fa fa-github"></i> Code</a>
+    <a href="#"><i class="fa fa-image"></i> Poster</a>
+  </div>
 
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align:center"><a href="" style="text-decoration:none">Paper</a></td>
-          <td style="text-align:center"><a href="https://github.com/AI-Application-and-Integration-Lab/CL4WSIS" style="text-decoration:none">Codes</a></td>
-          <td style="text-align:center"><a href="" style="text-decoration:none">Poster</a></td>
-        </tr>
-      </tbody>
-    </table>
+  <h2>Abstract</h2>
+  <p class="w3-large" style="text-align:justify">Instance segmentation requires labor-intensive manual labeling of the contours of complex objects in images for training. The labels can also be provided incrementally in practice to balance the human labor in different time steps. However, research on incremental learning for instance segmentation with only weak labels is still lacking. In this paper, we propose a continual-learning method to segment object instances from image-level labels. Unlike most weakly-supervised instance segmentation (WSIS) which relies on traditional object proposals, we transfer the semantic knowledge from weakly-supervised semantic segmentation (WSSS) to WSIS to generate instance cues. To address the background shift problem in continual learning, we employ the old class segmentation results generated by the previous model to provide more reliable semantic and peak hypotheses. To our knowledge, this is the first work on weakly-supervised continual learning for instance segmentation of images. Experimental results show that our method can achieve better performance on Pascal VOC and COCO datasets under various incremental settings.</p>
+  <div style="text-align: center;">
+    <img src="images/CL4WSIS/image.png" alt="Illustration of CL4WSIS architecture" style="width:100%; max-width:950px; border-radius: 0.5rem;">
+  </div>
 
-    <div style="height:5vh"></div>
-    <!-- <img src="images/CL4WSIS.png" class="center" style="width:400px" alt=""> -->
-    <h2 style="text-align: center;">Abstract</h2>
-    <p class="w3-large" style="text-align:justify">Instance segmentation requires labor-intensive manual labeling of the contours of complex objects in images for training. The labels can also be provided incrementally in practice to balance the human labor in different time steps. However, research on incremental learning for instance segmentation with only weak labels is still lacking. In this paper, we propose a continual-learning method to segment object instances from image-level labels. Unlike most weakly-supervised instance segmentation (WSIS) which relies on traditional object proposals, we transfer the semantic knowledge from weakly-supervised semantic segmentation (WSSS) to WSIS to generate instance cues. To address the background shift problem in continual learning, we employ the old class segmentation results generated by the previous model to provide more reliable semantic and peak hypotheses. To our knowledge, this is the first work on weakly-supervised continual learning for instance segmentation of images. Experimental results show that our method can achieve better performance on Pascal VOC and COCO datasets under various incremental settings.</p>
-    <img src="images/CL4WSIS/image.png" style="width:800px;margin-bottom:20px" alt="">
-
-    <hr class="w3-border-grey" style="margin:auto;width:100%">
-    <p class="w3-large"> If you find our paper or codes helpful, please cite</p>
-    <div class="w3-light-grey" style="width:800px;padding-top: 1px;padding-left: 10px;padding-right: 10px;">
-      <pre style="overflow: auto;word-wrap: break-word;">
-<code>@InProceedings{Hsieh_2023_ICCV,
+  <h2>Citation</h2>
+  <div style="background: var(--card-light); color: var(--text-light); border: 1px solid var(--border-light); padding: 1rem; max-width: 900px; margin: 0 auto; overflow-x: auto;">
+<pre><code>@InProceedings{Hsieh_2023_ICCV,
     author    = {Hsieh, Yu-Hsing and Chen, Guan-Sheng and Cai, Shun-Xian and Wei, Ting-Yun and Yang, Huei-Fang and Chen, Chu-Song},
     title     = {Class-incremental Continual Learning for Instance Segmentation with Image-level Weak Supervision},
     booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
@@ -61,10 +142,14 @@ body, html {height: 100%}
     year      = {2023},
     pages     = {1250-1261}
 }</code></pre>
-    </div>
-
   </div>
-</div>
 
+  <script>
+    const toggleBtn = document.getElementById('toggle-btn');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
 </body>
 </html>
