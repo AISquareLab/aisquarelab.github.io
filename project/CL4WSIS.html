@@ -25,11 +25,8 @@
       padding: 2rem;
       line-height: 1.6;
       transition: background-color 0.3s, color 0.3s;
-    }
-
-    h1, h2, h3 {
-      color: var(--text-light);
-      transition: color 0.3s;
+      opacity: 0;
+      transition: opacity 1s ease, background-color 0.3s, color 0.3s;
     }
 
     h1 {
@@ -44,6 +41,7 @@
       border-bottom: 2px solid var(--border-light);
       padding-bottom: 0.3rem;
       text-align: center;
+      transition: color 0.3s;
     }
 
     ul {
@@ -108,26 +106,81 @@
       background-color: #e5e7eb;
       border: none;
       border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ripple animation */
+    .ripple {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+      width: 100px;
+      height: 100px;
+      z-index: 0;
+    }
+
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* Typing animation */
+    .typing {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid var(--text-light);
+      width: 0;
+      animation: typing 4s steps(70, end), blink 0.75s step-end infinite;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: var(--text-light) }
+    }
+
+    /* Fade-in up */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: none;
     }
   </style>
 </head>
 <body>
   <button id="toggle-btn">🌙</button>
 
-  <h1>Class-incremental Continual Learning for Instance <br>Segmentation with Image-level Weak Supervision</h1>
-  <p style="text-align: center; font-size: 1.1rem;">
+  <h1 id="hero-title" class="typing">Class-incremental Continual Learning for Instance <br>Segmentation with Image-level Weak Supervision</h1>
+  <p class="fade-in-up" style="text-align: center; font-size: 1.1rem;">
     Yu-Hsing Hsieh, Guan-Sheng Chen, Shun-Xian Cai, Ting-Yun Wei, Huei-Fang Yang, Chu-Song Chen<br>
     <em>IEEE/CVF International Conference on Computer Vision (ICCV), 2023</em>
   </p>
 
-  <div style="text-align: center; margin-bottom: 1rem;">
-    <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Hsieh_Class-incremental_Continual_Learning_for_Instance_Segmentation_with_Image-level_Weak_Supervision_ICCV_2023_paper.pdf"><i class="fa fa-file-pdf-o"></i> Paper</a>
-    <a href="https://github.com/AI-Application-and-Integration-Lab/CL4WSIS"><i class="fa fa-github"></i> Code</a>
-    <a href="#"><i class="fa fa-image"></i> Poster</a>
+  <div class="fade-in-up" style="text-align: center; margin-bottom: 1rem;">
+    <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Hsieh_Class-incremental_Continual_Learning_for_Instance_Segmentation_with_Image-level_Weak_Supervision_ICCV_2023_paper.pdf">📄 Paper</a>
+    <a href="https://github.com/AI-Application-and-Integration-Lab/CL4WSIS">💻 Code</a>
+    <a href="#">🖼️ Poster</a>
   </div>
 
-  <h2>Abstract</h2>
-  <p style="text-align: justify; max-width: 900px; margin: 0 auto;">
+  <h2 class="fade-in-up">Abstract</h2>
+  <p class="fade-in-up" style="text-align: justify; max-width: 900px; margin: 0 auto;">
     Instance segmentation requires labor-intensive manual labeling of the contours of complex objects in images for training. 
     The labels can also be provided incrementally in practice to balance the human labor in different time steps. 
     However, research on incremental learning for instance segmentation with only weak labels is still lacking. 
@@ -137,15 +190,16 @@
     To our knowledge, this is the first work on weakly-supervised continual learning for instance segmentation of images. 
     Experimental results show that our method can achieve better performance on Pascal VOC and COCO datasets under various incremental settings.
   </p>
-  
-  <div style="text-align: center;">
+
+  <div class="fade-in-up" style="text-align: center;">
     <img src="images/CL4WSIS/image.png" alt="Illustration of CL4WSIS architecture" style="width:100%; max-width:950px; border-radius: 0.5rem;">
   </div>
-  <h2>Citation</h2>
-    <p style="max-width: 900px; margin: 0 auto; font-style: italic;">
+
+  <h2 class="fade-in-up">Citation</h2>
+  <p class="fade-in-up" style="text-align: center; max-width: 900px; margin: 0 auto; font-style: italic;">
     If you find our work useful, please consider citing our paper:
   </p>
-  <div style="background: var(--card-light); color: var(--text-light); border: 1px solid var(--border-light); padding: 1rem; max-width: 900px; margin: 0 auto; overflow-x: auto;">
+  <div class="fade-in-up" style="background: var(--card-light); color: var(--text-light); border: 1px solid var(--border-light); padding: 1rem; max-width: 900px; margin: 0 auto; overflow-x: auto;">
 <pre><code>@InProceedings{Hsieh_2023_ICCV,
     author    = {Hsieh, Yu-Hsing and Chen, Guan-Sheng and Cai, Shun-Xian and Wei, Ting-Yun and Yang, Huei-Fang and Chen, Chu-Song},
     title     = {Class-incremental Continual Learning for Instance Segmentation with Image-level Weak Supervision},
@@ -157,10 +211,42 @@
   </div>
 
   <script>
+    // 淡入效果 on load
+    window.onload = () => {
+      document.body.style.opacity = 1;
+    }
+
+    // 主題切換 + ripple 效果
     const toggleBtn = document.getElementById('toggle-btn');
-    toggleBtn.addEventListener('click', () => {
+    toggleBtn.addEventListener('click', (e) => {
+      const circle = document.createElement("span");
+      circle.classList.add("ripple");
+      circle.style.left = `${e.offsetX - 50}px`;
+      circle.style.top = `${e.offsetY - 50}px`;
+      toggleBtn.appendChild(circle);
+      setTimeout(() => circle.remove(), 600);
+
       document.body.classList.toggle('dark-mode');
       toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+
+    // 滾動出現動畫
+    const faders = document.querySelectorAll('.fade-in-up');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
     });
   </script>
 </body>
