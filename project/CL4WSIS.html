@@ -24,16 +24,48 @@
       margin: 0;
       padding: 2rem;
       line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
+      opacity: 0;
+      transition: opacity 1s ease, background-color 0.3s, color 0.3s;
     }
 
-    h1, h2, h3 {
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      background-color: var(--card-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .navbar a {
+      margin-left: 1rem;
+      text-decoration: none;
       color: var(--text-light);
+      font-weight: 500;
       transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: var(--link);
+    }
+
+    .dark-mode header {
+      background-color: var(--card-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .dark-mode .navbar a {
+      color: var(--text-dark);
     }
 
     h1 {
       font-size: 2rem;
+      margin-top: 4rem;
       margin-bottom: 0.5rem;
       text-align: center;
     }
@@ -44,43 +76,49 @@
       border-bottom: 2px solid var(--border-light);
       padding-bottom: 0.3rem;
       text-align: center;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      background-color: var(--card-light);
-      border: 1px solid var(--border-light);
-      border-radius: 0.5rem;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      transition: background-color 0.3s, border 0.3s;
-    }
-
-    strong {
-      font-size: 1.2rem;
-      color: var(--text-light);
       transition: color 0.3s;
     }
 
-    em {
-      color: #6b7280;
-      display: block;
-      margin-top: 0.25rem;
+    #toggle-btn {
+      margin-left: 1rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #e5e7eb;
+      border: none;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
     }
 
-    a {
-      margin-right: 0.5rem;
-      color: var(--link);
-      text-decoration: none;
+    .ripple {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+      width: 100px;
+      height: 100px;
+      z-index: 0;
     }
 
-    a:hover {
-      text-decoration: underline;
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: none;
     }
 
     .dark-mode {
@@ -89,8 +127,7 @@
     }
 
     .dark-mode h1,
-    .dark-mode h2,
-    .dark-mode strong {
+    .dark-mode h2 {
       color: var(--text-dark);
     }
 
@@ -99,68 +136,115 @@
       border: 1px solid var(--border-dark);
     }
 
-    #toggle-btn {
-      margin: 1rem auto;
-      display: block;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      background-color: #e5e7eb;
-      border: none;
-      border-radius: 5px;
+    a {
+      color: var(--link);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 100%;
+      max-width: 950px;
+      border-radius: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <button id="toggle-btn">🌙</button>
+  <!-- Floating Nav Bar -->
+  <header>
+    <nav class="navbar">
+      <a href="#abstract">Abstract</a>
+      <a href="#citation">Citation</a>
+      <button id="toggle-btn">🌙</button>
+    </nav>
+  </header>
 
-  <h1>Class-incremental Continual Learning for Instance <br>Segmentation with Image-level Weak Supervision</h1>
-  <p style="text-align: center; font-size: 1.1rem;">
-    Yu-Hsing Hsieh, Guan-Sheng Chen, Shun-Xian Cai, Ting-Yun Wei, Huei-Fang Yang, Chu-Song Chen<br>
-    <em>IEEE/CVF International Conference on Computer Vision (ICCV), 2023</em>
-  </p>
+  <div class="content">
+    <h1>Class-incremental Continual Learning for Instance <br>Segmentation with Image-level Weak Supervision</h1>
+    <p class="fade-in-up" style="text-align: center; font-size: 1.1rem;">
+      Yu-Hsing Hsieh, Guan-Sheng Chen, Shun-Xian Cai, Ting-Yun Wei, Huei-Fang Yang, Chu-Song Chen<br>
+      <em>IEEE/CVF International Conference on Computer Vision (ICCV), 2023</em>
+    </p>
 
-  <div style="text-align: center; margin-bottom: 1rem;">
-    <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Hsieh_Class-incremental_Continual_Learning_for_Instance_Segmentation_with_Image-level_Weak_Supervision_ICCV_2023_paper.pdf"><i class="fa fa-file-pdf-o"></i>📄 Paper</a>
-    <a href="https://github.com/AI-Application-and-Integration-Lab/CL4WSIS"><i class="fa fa-github"></i>💻  Code</a>
-    <a href="#"><i class="fa fa-image"></i>🖼️ Poster</a>
-  </div>
+    <div class="fade-in-up" style="text-align: center; margin-bottom: 1rem;">
+      <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Hsieh_Class-incremental_Continual_Learning_for_Instance_Segmentation_with_Image-level_Weak_Supervision_ICCV_2023_paper.pdf">📄 Paper</a>
+      <a href="https://github.com/AI-Application-and-Integration-Lab/CL4WSIS">💻 Code</a>
+      <a href="#">🖼️ Poster</a>
+    </div>
 
-  <h2>Abstract</h2>
-  <p style="text-align: justify; max-width: 900px; margin: 0 auto;">
-    Instance segmentation requires labor-intensive manual labeling of the contours of complex objects in images for training. 
-    The labels can also be provided incrementally in practice to balance the human labor in different time steps. 
-    However, research on incremental learning for instance segmentation with only weak labels is still lacking. 
-    In this paper, we propose a continual-learning method to segment object instances from image-level labels. 
-    Unlike most weakly-supervised instance segmentation (WSIS) which relies on traditional object proposals, we transfer the semantic knowledge from weakly-supervised semantic segmentation (WSSS) to WSIS to generate instance cues. 
-    To address the background shift problem in continual learning, we employ the old class segmentation results generated by the previous model to provide more reliable semantic and peak hypotheses. 
-    To our knowledge, this is the first work on weakly-supervised continual learning for instance segmentation of images. 
-    Experimental results show that our method can achieve better performance on Pascal VOC and COCO datasets under various incremental settings.
-  </p>
-  
-  <div style="text-align: center;">
-    <img src="images/CL4WSIS/image.png" alt="Illustration of CL4WSIS architecture" style="width:100%; max-width:950px; border-radius: 0.5rem;">
-  </div>
-  <h2>Citation</h2>
-    <p style="max-width: 900px; margin: 0 auto; font-style: italic;">
-    If you find our work useful, please consider citing our paper:
-  </p>
-  <div style="background: var(--card-light); color: var(--text-light); border: 1px solid var(--border-light); padding: 1rem; max-width: 900px; margin: 0 auto; overflow-x: auto;">
+    <h2 id="abstract" class="fade-in-up">Abstract</h2>
+    <p class="fade-in-up" style="text-align: justify;">
+      Instance segmentation requires labor-intensive manual labeling of the contours of complex objects in images for training. 
+      The labels can also be provided incrementally in practice to balance the human labor in different time steps. 
+      However, research on incremental learning for instance segmentation with only weak labels is still lacking. 
+      In this paper, we propose a continual-learning method to segment object instances from image-level labels. 
+      Unlike most weakly-supervised instance segmentation (WSIS) which relies on traditional object proposals, we transfer the semantic knowledge from weakly-supervised semantic segmentation (WSSS) to WSIS to generate instance cues. 
+      To address the background shift problem in continual learning, we employ the old class segmentation results generated by the previous model to provide more reliable semantic and peak hypotheses. 
+      To our knowledge, this is the first work on weakly-supervised continual learning for instance segmentation of images. 
+      Experimental results show that our method can achieve better performance on Pascal VOC and COCO datasets under various incremental settings.
+    </p>
+
+    <div class="fade-in-up" style="text-align: center;">
+      <img src="images/CL4WSIS/image.png" alt="Illustration of CL4WSIS architecture">
+    </div>
+
+    <h2 id="citation" class="fade-in-up">Citation</h2>
+    <p class="fade-in-up" style="text-align: center; font-style: italic;">
+      If you find our work useful, please consider citing our paper:
+    </p>
+    <div class="fade-in-up" style="background: var(--card-light); color: var(--text-light); border: 1px solid var(--border-light); padding: 1rem; overflow-x: auto;">
 <pre><code>@InProceedings{Hsieh_2023_ICCV,
-    author    = {Hsieh, Yu-Hsing and Chen, Guan-Sheng and Cai, Shun-Xian and Wei, Ting-Yun and Yang, Huei-Fang and Chen, Chu-Song},
-    title     = {Class-incremental Continual Learning for Instance Segmentation with Image-level Weak Supervision},
-    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-    month     = {October},
-    year      = {2023},
-    pages     = {1250-1261}
+  author    = {Hsieh, Yu-Hsing and Chen, Guan-Sheng and Cai, Shun-Xian and Wei, Ting-Yun and Yang, Huei-Fang and Chen, Chu-Song},
+  title     = {Class-incremental Continual Learning for Instance Segmentation with Image-level Weak Supervision},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month     = {October},
+  year      = {2023},
+  pages     = {1250-1261}
 }</code></pre>
+    </div>
   </div>
 
   <script>
+    window.onload = () => {
+      document.body.style.opacity = 1;
+    }
+
     const toggleBtn = document.getElementById('toggle-btn');
-    toggleBtn.addEventListener('click', () => {
+    toggleBtn.addEventListener('click', (e) => {
+      const circle = document.createElement("span");
+      circle.classList.add("ripple");
+      circle.style.left = `${e.offsetX - 50}px`;
+      circle.style.top = `${e.offsetY - 50}px`;
+      toggleBtn.appendChild(circle);
+      setTimeout(() => circle.remove(), 600);
+
       document.body.classList.toggle('dark-mode');
       toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+
+    const faders = document.querySelectorAll('.fade-in-up');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
     });
   </script>
 </body>
