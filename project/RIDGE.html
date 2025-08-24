@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RIDGE – Project Page</title>
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --bg-dark: #1f2937;
+      --text-light: #1f2937;
+      --text-dark: #f3f4f6;
+      --card-light: #ffffff;
+      --card-dark: #374151;
+      --border-light: #e5e7eb;
+      --border-dark: #4b5563;
+      --link: #2563eb;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+      opacity: 0;
+      transition: opacity 1s ease, background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      background-color: var(--card-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .navbar a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: var(--link);
+    }
+
+    .dark-mode header {
+      background-color: var(--card-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .dark-mode .navbar a {
+      color: var(--text-dark);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 4rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 0.3rem;
+      text-align: center;
+      transition: color 0.3s;
+    }
+
+    #toggle-btn {
+      margin-left: 1rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #e5e7eb;
+      border: none;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ripple {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+      width: 100px;
+      height: 100px;
+      z-index: 0;
+    }
+
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .dark-mode h1,
+    .dark-mode h2 {
+      color: var(--text-dark);
+    }
+
+    .dark-mode li {
+      background-color: var(--card-dark);
+      border: 1px solid var(--border-dark);
+    }
+
+    a {
+      color: var(--link);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 100%;
+      max-width: 950px;
+      border-radius: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Nav Bar -->
+  <header>
+    <nav class="navbar">
+      <a href="../index.html" style="margin-left: 0; font-weight: bold;">🏠 Home</a>
+      <a href="#abstract">Abstract</a>
+      <a href="#citation">Citation</a>
+      <button id="toggle-btn">🌙</button>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h1>Relation-Rich Visual Document Generator for Visual Information Extraction (RIDGE)</h1>
+    <p class="fade-in-up" style="text-align: center; font-size: 1.1rem;">
+      Zi-Han Jiang, Chien-Wei Lin, Wei-Hua Li, Hsuan-Tung Liu, Yi-Ren Yeh, Chu-Song Chen<br>
+      <em>Conference on Computer Vision and Pattern Recognition (CVPR), 2025</em>
+    </p>
+
+    <div class="fade-in-up" style="text-align: center; margin-bottom: 1rem;">
+      <a href="https://arxiv.org/abs/2504.10659">📄 Paper</a>
+      <a href="https://github.com/AI-Application-and-Integration-Lab/RIDGE">💻 Code</a>
+      <!-- <a href="#">🖼️ Poster</a> -->
+    </div>
+
+    <h2 id="abstract" class="fade-in-up">Abstract</h2>
+    <p class="fade-in-up" style="text-align: justify;">
+      Despite advances in Large Language Models (LLMs) and Multimodal LLMs (MLLMs) for visual document understanding (VDU), visual information extraction (VIE) from relation-rich documents remains challenging due to the layout diversity and limited training data. While existing synthetic document generators attempt to address data scarcity, they either rely on manually designed layouts and templates, or adopt rule-based approaches that limit layout diversity. Besides, current layout generation methods focus solely on topological patterns without considering textual content, making them impractical for generating documents with complex associations between the contents and layouts. In this paper, we propose a <b>R</b>elation-r<b>I</b>ch visual <b>D</b>ocument <b>GE</b>nerator (RIDGE) that addresses these limitations through a two-stage approach: (1) <i>Content Generation</i>, which leverages LLMs to generate document content using a carefully designed Hierarchical Structure Text format which captures entity categories and relationships, and (2) <i>Content-driven Layout Generation</i>, which learns to create diverse, plausible document layouts solely from easily available Optical Character Recognition (OCR) results, requiring no human labeling or annotations efforts. Experimental results have demonstrated that our method significantly enhances the performance of document understanding models on various VIE benchmarks.
+    </p>
+    <div class="fade-in-up" style="text-align: center;">
+      <img src="images/RIDGE/pipeline.jpg" alt="Document Generation Pipeline">
+    </div>
+
+    <h2 id="citation" class="fade-in-up">Citation</h2>
+    <p class="fade-in-up" style="text-align: center; font-style: italic;">
+      If you find our work useful, please consider citing our paper:
+    </p>
+    <div class="fade-in-up" style="background: var(--card-light); color: var(--text-light); border: 1px solid var(--border-light); padding: 1rem; overflow-x: auto;">
+<pre><code>@inproceedings{jiang2025relation,
+  title={Relation-Rich Visual Document Generator for Visual Information Extraction},
+  author={Jiang, Zi-Han and Lin, Chien-Wei and Li, Wei-Hua and Liu, Hsuan-Tung and Yeh, Yi-Ren and Chen, Chu-Song},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={14449--14459},
+  year={2025}
+}</code></pre>
+    </div>
+  </div>
+
+  <script>
+    window.onload = () => {
+      document.body.style.opacity = 1;
+    }
+
+    const toggleBtn = document.getElementById('toggle-btn');
+    toggleBtn.addEventListener('click', (e) => {
+      const circle = document.createElement("span");
+      circle.classList.add("ripple");
+      circle.style.left = `${e.offsetX - 50}px`;
+      circle.style.top = `${e.offsetY - 50}px`;
+      toggleBtn.appendChild(circle);
+      setTimeout(() => circle.remove(), 600);
+
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+
+    const faders = document.querySelectorAll('.fade-in-up');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
